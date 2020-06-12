@@ -12,6 +12,7 @@
   :provided
   {:extra-deps
    {
+    org.clojure/clojurescript {:mvn/version "1.10.764"}
     }}
 
 
