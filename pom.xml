@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>user.clojure.lang</groupId>
   <artifactId>user.clojure.lang</artifactId>
-  <version>2020.164.33190</version>
+  <version>2020.333.25962</version>
   <repositories>
     <repository>
       <id>clojars</id>
