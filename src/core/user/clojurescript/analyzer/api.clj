@@ -18,7 +18,7 @@
   (try
     (when-not (macro? var)
       `(def ~(symbol sym) ~var))
-    (catch Throwable e nil)))
+    (catch Throwable _e nil)))
 
 
 (defmacro import-namespace
@@ -36,16 +36,16 @@
 
 
 (comment
-  (import-var 'ifl #'cljs.core/abc)
+  ;; (import-var 'ifl #'cljs.core/abc)
 
-  cljs.env/*compiler*
-  (a.api/find-ns)
+  ;; cljs.env/*compiler*
+  ;; (a.api/find-ns)
 
-  (cljs.analyzer/requires-analysis?)
+  ;; (cljs.analyzer/requires-analysis?)
 
-  (cljs.closure/cljs-dependencies )
-  (cljs.closure/set-options {} )
-  (cljs.closure/cljs-dependencies
+  ;; (cljs.closure/cljs-dependencies )
+  ;; (cljs.closure/set-options {} )
+  #_(cljs.closure/cljs-dependencies
    {:optimizations :none
     :output-to  "target-cljs/out.js"
     :output-dir "target-cljs/out"

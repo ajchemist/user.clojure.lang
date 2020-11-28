@@ -54,7 +54,7 @@
      (require (quote ~nsp))
      (import-namespace
        (quote ~nsp)
-       ~(if-not (= :all vars)
+       ~(when-not (= :all vars)
           `(quote ~vars)))
-     ~(if more
+     ~(when more
         `(import ~@more))))

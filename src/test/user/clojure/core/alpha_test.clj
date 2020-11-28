@@ -15,12 +15,16 @@
 
 
 (deftest main
-  (is
-    (are [x y] (= x y)
-      (nsym :clojure.core)
-      (nsym :clojure.core/some)
-      (nsym 'clojure.core)
-      (nsym 'clojure.core/some)))
+  (let [{:keys [major minor]} *clojure-version*]
+    (if (and (= major 1) (<= 10 minor))
+      (are [x y] (= x y)
+        (nsym :clojure.core)
+        (nsym :clojure.core/some)
+        (nsym 'clojure.core)
+        (nsym 'clojure.core/some))
+      (are [x y] (= x y)
+        (nsym 'clojure.core)
+        (nsym 'clojure.core/some))))
 
 
   (is

@@ -59,8 +59,8 @@
   (resolve-ns 'clojure.core)
   (assert-ns 'clojure.hello)
 
-  (defmacro  [name sym] `[~name ~sym])
-  (intern )
+  ;; (defmacro  [name sym] `[~name ~sym])
+  ;; (intern )
   )
 
 
@@ -130,12 +130,12 @@
       ([x y z w u v]
        (memoize-form m f x y z w u v))
       ([x y z w u v & rest]
-       (let [k (list* x y z w u v rest)]
-         (let [v (.get ^ConcurrentHashMap m k)]
-           (if-not (nil? v)
-             (re-nil v)
-             (let [v (de-nil (apply f k))]
-               (or (.putIfAbsent m k v) v)))))))))
+       (let [k (list* x y z w u v rest)
+             v (.get ^ConcurrentHashMap m k)]
+         (if-not (nil? v)
+           (re-nil v)
+           (let [v (de-nil (apply f k))]
+             (or (.putIfAbsent m k v) v))))))))
 
 
 ;; * deep merge
